@@ -25,7 +25,7 @@ namespace Common.Extentions
             return services;
         }
 
-        public static IApplicationBuilder UseConsul(this IApplicationBuilder app)
+        public static IApplicationBuilder UseConsul(this IApplicationBuilder app,string name)
         {
             var consulClient = app.ApplicationServices.GetRequiredService<IConsulClient>();
             var logger = app.ApplicationServices.GetRequiredService<ILoggerFactory>().CreateLogger("AppExtensions");
@@ -41,9 +41,9 @@ namespace Common.Extentions
             var uri = new Uri(address);
             var registration = new AgentServiceRegistration()
             {
-                ID = $"WeatherForecastServices-{uri.Port}",
+                ID = $"{name}-{uri.Port}",
                 // servie name  
-                Name = "WeatherForecastServices",
+                Name = name,
                 Address = $"{uri.Host}",
                 Port = uri.Port
             };
