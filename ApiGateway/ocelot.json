@@ -4,7 +4,7 @@
       "UseServiceDiscovery": true,
       "DownstreamPathTemplate": "/{url}",
       "DownstreamScheme": "https",
-      "ServiceName": "WeatherForecastServices",
+      "ServiceName": "WeatherForecast",
       "LoadBalancerOptions": {
         "Type": "LeastConnection"
       },

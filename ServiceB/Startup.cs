@@ -42,7 +42,7 @@ namespace ServiceB
 
             app.UseRouting();
 
-            app.UseConsul();
+            app.UseConsul("WeatherForecast");
 
             app.UseAuthorization();
 

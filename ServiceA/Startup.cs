@@ -42,7 +42,7 @@ namespace ServiceA
 
             app.UseRouting();
 
-            app.UseConsul();
+            app.UseConsul("WeatherForecast");
 
             app.UseAuthorization();
 
